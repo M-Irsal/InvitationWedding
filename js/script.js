@@ -122,7 +122,7 @@ const countdownFunction = setInterval(function () {
     /* =========================================
        FORM SUBMIT (EMAILJS)
     ========================================= */
-    const form = document.getElementById("contactForm");
+    const form = document.getElementById("wedding-rsvp");
 
     form.addEventListener("submit", function(e) {
         e.preventDefault();
