@@ -113,6 +113,33 @@ document.getElementById('scrollNext').addEventListener('click', () => {
     });
 });
 
+// countdown timer
+const weddingDate = new Date("March 15, 2027 15:00:00").getTime();
+
+const countdownFunction = setInterval(function () {
+
+    const now = new Date().getTime();
+    const distance = weddingDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").innerHTML = `
+        <span class="countdown-box">${days} Hari</span>
+        <span class="countdown-box">${hours} Jam</span>
+        <span class="countdown-box">${minutes} Menit</span>
+        <span class="countdown-box">${seconds} Detik</span>
+    `;
+
+    if (distance < 0) {
+        clearInterval(countdownFunction);
+        document.getElementById("countdown").innerHTML = "Acara Sedang Berlangsung 💍";
+    }
+
+}, 1000);
+
  /* =========================================
        EMAILJS INIT
     ========================================= */
@@ -128,8 +155,8 @@ document.getElementById('scrollNext').addEventListener('click', () => {
         e.preventDefault();
 
         emailjs.sendForm(
-            "service_fnlc315",
-            "template_3qurc43",
+            "service_074g4cz",
+            "template_t96cs2k",
             this
         )
         .then(function() {

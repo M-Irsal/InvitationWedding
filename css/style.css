@@ -148,6 +148,26 @@
                 opacity: 0;
             }
         }
+         .countdown {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .countdown span {
+            display: inline-block;
+            margin: 5px 10px;
+        }
+
+        .countdown-box {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            padding: 10px 15px;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            min-width: 70px;
+        }
 
         /* Polymorphic Cards */
         .section {
