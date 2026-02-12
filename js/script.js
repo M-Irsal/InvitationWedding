@@ -113,3 +113,34 @@ document.getElementById('scrollNext').addEventListener('click', () => {
     });
 });
 
+ /* =========================================
+       EMAILJS INIT
+    ========================================= */
+    emailjs.init("SZoD1zqpx-oUAUZWQ");
+
+
+    /* =========================================
+       FORM SUBMIT (EMAILJS)
+    ========================================= */
+    const form = document.getElementById("contactForm");
+
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        emailjs.sendForm(
+            "service_fnlc315",
+            "template_3qurc43",
+            this
+        )
+        .then(function() {
+            alert("Message sent successfully!");
+            form.reset();
+        })
+        .catch(function(error) {
+            alert("Failed to send message.");
+            console.log(error);
+        });
+    });
+
+    
+

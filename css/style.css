@@ -331,6 +331,34 @@
             transform: scale(1.1);
         }
 
+        .map-container {
+        position: relative;
+        }
+
+        .map-image {
+            filter: blur(3px);
+            transform: scale(1.05);
+        }
+
+        .map-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            text-align: center;
+            backdrop-filter: blur(2px);
+            transition: 0.3s ease;
+        }
+
+        .map-container:hover .map-image {
+            filter: blur(1px);
+            transform: scale(1.1);
+        }
+
         /* RSVP Form */
         .rsvp-form {
             max-width: 600px;
