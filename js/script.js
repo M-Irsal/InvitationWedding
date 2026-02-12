@@ -29,33 +29,6 @@
             fadeElements.forEach(element => {
                 appearOnScroll.observe(element);
             });
-            
-            // Form submission
-            document.getElementById('wedding-rsvp').addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const form = e.target;
-                const nama = form.nama.value.trim();
-                const email = form.email.value.trim();
-                const jumlah = form.jumlah_tamu.value.trim();
-                const hadir = form.kehadiran.value.trim();
-
-                // Jika catatan kosong, isi dengan '-'
-                let catatanValue = form.catatan.value.trim();
-                if(catatanValue === "") catatanValue = "-";
-
-                // Buat pesan WA lengkap
-                let message = `Halo! Saya ingin konfirmasi :\nNama: ${nama}\nEmail: ${email}\nJumlah Tamu: ${jumlah}\nKehadiran: ${hadir}\nCatatan: ${catatanValue}`;
-
-                // Encode seluruh pesan sekaligus
-                const encodedMessage = encodeURIComponent(message);
-
-                const waNumber = "628818853757"; // ganti dengan nomor WA tujuan
-                const url = `https://wa.me/${waNumber}?text=${encodedMessage}`;
-                window.open(url, "_blank");
-            });
-
-
 
             // Parallax effect for hero section
             window.addEventListener('scroll', function() {
