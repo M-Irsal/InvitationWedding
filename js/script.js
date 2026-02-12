@@ -113,34 +113,35 @@ const countdownFunction = setInterval(function () {
 
 }, 1000);
 
- /* =========================================
-       EMAILJS INIT
-    ========================================= */
+// emailjs
+ document.addEventListener("DOMContentLoaded", function () {
+
     emailjs.init("SZoD1zqpx-oUAUZWQ");
 
-
-    /* =========================================
-       FORM SUBMIT (EMAILJS)
-    ========================================= */
     const form = document.getElementById("wedding-rsvp");
 
-    form.addEventListener("submit", function(e) {
-        e.preventDefault();
+    if (form) {
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+            e.stopPropagation(); // tambahkan ini biar tidak ada script lain jalan
 
-        emailjs.sendForm(
-            "service_074g4cz",
-            "template_t96cs2k",
-            this
-        )
-        .then(function() {
-            alert("Message sent successfully!");
-            form.reset();
-        })
-        .catch(function(error) {
-            alert("Failed to send message.");
-            console.log(error);
+            emailjs.sendForm(
+                "service_074g4cz",
+                "template_t96cs2k",
+                this
+            )
+            .then(function() {
+                alert("Konfirmasi berhasil dikirim 💌");
+                form.reset();
+            })
+            .catch(function(error) {
+                alert("Gagal mengirim 😢");
+                console.log(error);
+            });
         });
-    });
+    }
+
+});
 
     
 
